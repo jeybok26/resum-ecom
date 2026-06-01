@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Resume - JEYYAR BOKO</title>
+        <!-- Include html2pdf.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="print.css" media="print">
         <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -25,7 +28,7 @@
 
         <!-- Navigation -->
         <nav class="navbar">
-            <div class="logo">Resume of JEYYAR BOKO</div>
+            <div class="logo">Resumé of JEYYAR BOKO</div>
             <ul class="nav-links" id="navLinks">
                 <li>
                     <a href="#header">Contact</a>
@@ -34,7 +37,7 @@
                     <a href="#summary">Summary</a>
                 </li>
                 <li>
-                    <a href="#experience">Experiences</a>
+                    <a href="#experience">Work Experiences</a>
                 </li>
                 <li>
                     <a href="#skills">Skills</a>
@@ -65,6 +68,8 @@
             <p>Address: Davao City, Davao del Sur 8000 Philippines</p>
 
             <br>
+            <br>
+            <br>
 
             <div class="btnbooking">
                 <!-- Google Calendar Appointment Scheduling begin -->
@@ -93,31 +98,36 @@
                 <!-- end Google Calendar Appointment Scheduling -->
             </div>
 
+            <div class="pdfdownload">
+                <!-- Button to trigger PDF download -->
+                <button id="download" class="no-print">Download Full Page as PDF</button>
+
+                <script>
+                document.getElementById("download").addEventListener("click", () => {
+                    const element = document.body; // capture the whole page
+                    html2pdf().from(element).save("Jeyyar_Boko_Resume.pdf");
+                });
+                </script>
+            </div>
+
         </header>
 
         <!-- Professional Summary -->
         <section id="summary" class="section">
             <h2>Professional Summary</h2>
             <p>
-                Results-oriented and analytical E-Commerce Manager with over 5 years of
-                experience driving online customer acquisition and sales growth. Skilled in
-                scaling e-commerce capabilities, leveraging data insights, and implementing
-                innovative strategies. Proficient in testing new features, measuring outcomes,
-                and adapting to evolving business needs. Strong expertise in consumer behavior,
-                audience segmentation, and utilizing website analytics and tracking tools.
-                Experienced in managing major marketplaces including Walmart, Shopify, Facebook
-                Marketplace, Amazon, eBay, and Etsy. Renowned for resolving challenges,
-                enhancing customer satisfaction, optimizing operations, and consistently
-                achieving cost savings while boosting profitability.
+                Results-oriented and analytical E-Commerce Manager with over 5 years of experience driving online customer acquisition and sales growth. Skilled in scaling e-commerce operations, leveraging data insights, and implementing innovative, results-driven strategies. Proficient in testing new features, measuring performance, and adapting quickly to evolving business needs. Strong expertise in consumer behavior, audience segmentation, and utilizing website analytics and tracking tools. Advanced proficiency in Google Sheets, including building dynamic dashboards, utilizing complex formulas, and implementing automation (e.g., data integration, reporting workflows, and performance tracking) to streamline operations and support data-driven decision-making. Experienced in managing major marketplaces including Walmart, Shopify, Facebook Marketplace, Amazon, eBay, and Etsy. Recognized for problem-solving, enhancing customer satisfaction, optimizing processes, and consistently achieving cost savings while driving profitability.
             </p>
         </section>
 
+        <div class="page-break"></div>
+
         <!-- Work Experience -->
         <section id="experience" class="section">
-            <h2>Work Experience</h2>
+            <h2>Work Experiences</h2>
 
             <div class="job">
-                <h3>Walmart Store / Account Manager / CSR / Trainor</h3>
+                <h3>Walmart Store / Account Manager / CSR / Trainer </h3>
                 <span>12/2020 - 02/2023</span>
                 <p>• Managed end-to-end Walmart Marketplace store operations, including product
                     listing, inventory updates, and order fulfillment.</p>
@@ -156,7 +166,20 @@
                 <p>• Ensured compliance with eBay policies and optimized listings for maximum
                     visibility and profitability.</p>
             </div>
+
+            <div class="job">
+                <h3>Bookeeper | First Sun LLC</h3>
+                <span>04/2023 - 10/2023</span>
+                <p>• Managed financial records, including accounts payable and receivable, reconciliations, and ledger entries.</p>
+                <p>• Ensured accuracy in transactions and maintained compliance with accounting standards.</p>
+                <p>• Utilized [Accounting Software, e.g., QuickBooks; Xero] for efficient record-keeping and reporting.</p>
+                <p>• Monitored sales performance, analyzed trends, and implemented strategies to
+                    improve conversions</p>
+                <p>• Assisted in budgeting and financial planning to optimize company resources.</p>
+            </div>
         </section>
+
+        <div class="page-break"></div>
 
         <!-- Skills -->
         <section id="skills" class="section">
@@ -194,6 +217,8 @@
             </ul>
         </section>
 
+        <div class="page-break"></div>
+
         <!-- Education -->
         <section id="education" class="section">
             <h2>Education</h2>
@@ -215,7 +240,7 @@
         <script src="script.js"></script>
 
     </body>
-
 </html>
+
 
 
