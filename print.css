@@ -1,0 +1,48 @@
+/* print.css — A4 PDF export stylesheet */
+
+@media print {
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 20mm; /* Adjust margins as needed */
+  }
+
+
+
+  }
+
+  /* Tables and images stay intact */
+  table, img {
+    page-break-inside: avoid;
+    max-width: 100%; /* scale images to fit page width */
+    height: auto;
+  }
+
+  .section {
+    padding: 50px 10px;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+  /* Force new page when needed */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Hide interactive or unnecessary elements */
+  .no-print,
+  button,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  /* Links show text only, no URLs */
+  a:link:after, a:visited:after {
+    content: "";
+  }
